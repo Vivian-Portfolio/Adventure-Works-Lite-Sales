@@ -1,5 +1,5 @@
-# [Project Title]
-> *One sentence. What did you analyze, build, or solve - and why does it matter?*
+# Sales Data Analysis (Adventure Work Lite Sales)
+> *SQL- based analysis of retail sales transctions to answer business questions on order value, product line revenue, and customer performance using MySQL.*
 
 ---
 
@@ -7,11 +7,11 @@
 > *Check what applies. This helps reviewers and collaborators understand the nature of the work at a glance. Delete this block before publishing.*
 
 - [ ] Exploratory Data Analysis (EDA)
-- [ ] SQL Analysis / Querying
+- [x] SQL Analysis / Querying
 - [ ] Dashboard / Data Visualization
 - [ ] Data Pipeline / ETL
 - [ ] Predictive Modelling / Machine Learning
-- [ ] Data Cleaning / Wrangling
+- [x] Data Cleaning / Wrangling
 - [ ] End-to-End (multiple of the above)
 - [ ] Other: ___________
 
@@ -19,77 +19,44 @@
 
 ## Table of Contents
 1. [Project Overview](#1-project-overview)
-2. [Objectives](#2-objectives)
-3. [Project Scope & Tools](#3-project-scope--tools)
-4. [Repository Structure](#4-repository-structure)
-5. [Data Workflow](#5-data-workflow)
-6. [Data Model & Schema](#6-data-model--schema)
-7. [ERD - Entity Relationship Diagram](#7-erd--entity-relationship-diagram) *(SQL projects)*
-8. [Analysis & Metrics](#8-analysis--metrics)
+2. [Key Questions Answered](#2-Key Questions Answered)
+3. [Objectives](#2-objectives)
+4. [Project Scope & Tools](#3-project-scope--tools)
+5. [Repository Structure](#4-repository-structure)
+6. [Data Workflow](#5-data-workflow)
+7. [Data Model & Schema](#6-data-model--schema)
+8. [SQL Analysis & Queries](#8-SQL Analysis & Queries)
 9. [Key Insights](#9-key-insights)
 10. [Recommendations](#10-recommendations)
-11. [Assumptions & Limitations](#11-assumptions--limitations)
-12. [Future Enhancements](#12-future-enhancements)
-13. [Deliverables](#13-deliverables)
-14. [Author](#14-author)
+11. [Deliverables](#13-deliverables)
+12. [Author](#14-author)
 
 ---
 
 ## 1. Project Overview
 
-<!--
-  Write 3–5 sentences in plain language.
-  Cover: context → problem → approach → outcome.
-  Read it out loud. If it sounds like a form - rewrite it.
 
-  WHAT GOOD LOOKS LIKE:
-  "A mid-size retail business was seeing inconsistent revenue across
-  its regional stores but couldn't identify the root cause. This project
-  explored 18 months of transaction data across five regions to determine
-  whether underperformance was driven by sales volume, pricing, or return
-  rates. The analysis revealed that one region's gap was almost entirely
-  explained by an unusually high return rate on a single product category -
-  a finding invisible in the company's top-level reporting."
 
-  WHAT TO AVOID:
-  "This project analyzes sales data to find trends and insights."
-  (Too vague. Could describe 10,000 projects. Describes none of them.)
--->
 
-**Context:** [The business, research, or personal situation that motivated this project.]
-
-**Problem Statement:** [The specific question or challenge you were addressing.]
-
-**Approach:** [In 1–2 sentences - how did you tackle it?]
-
-**Outcome:** [What did you produce or discover?]
+**Context:** The sales_data dataset (Adventure Works Lite Sales) contains transactional order records that needed structured analysis to answer core business questions about revenue, product performance, and customer behavior.
+**Problem Statement:**  The dataset had order records stored with an inconsistently formatted date field and no structured analysis to answer key business questions — such as which product lines drive the most revenue, which customers generate the most revenue, and how sales trend over time.
+**Approach:** Used SQL in MySQL Workbench to query the sales database, writing structured queries using aggregate functions (SUM, AVG, COUNT), GROUP BY/HAVING, window functions (RANK, ROW_NUMBER, PARTITION BY), and date functions (STR_TO_DATE, YEAR, MONTH) to answer eight key business questions about the sales data.
+**Outcome:**  Successfully extracted business insights from the sales dataset, identifying the highest-value orders, top-performing product lines by revenue, country-level order value and revenue, top revenue-generating customers overall and by country, and monthly/yearly revenue trends.
 
 ---
 
-## 2. Objectives
+## 2.
 
-<!--
-  Write objectives that are specific enough to succeed or fail.
-  Use action-oriented verbs: Identify, Determine, Quantify, Build, Evaluate.
+**Key Questions Answered**
 
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Determine whether customer churn rate correlates with support ticket volume."
-  ✅ "Identify the top three revenue-driving product categories across all regions."
-  ✅ "Build a reproducible pipeline that ingests and cleans daily sales exports."
-
-  WHAT TO AVOID:
-  ❌ "Explore the data."
-  ❌ "Gain insights."
-  ❌ "Understand trends."
-  (These can't fail - which means they can't succeed either.)
--->
-
-- **Primary Objective:** [The main thing you set out to do]
-- **Secondary Objective 1:** [Supporting goal]
-- **Secondary Objective 2:** [Supporting goal]
-- **Secondary Objective 3:** [Remove if not applicable]
-
-> 💡 *Every analysis decision in this project traces back to one of these objectives.*
+- What are the 10 highest-value single orders, and what product line were they from?
+- Which product lines generate the most total revenue?
+- What is the average order value and total revenue by country?
+- Which customers are the highest revenue generators?
+- How do all orders rank from highest to lowest sales value?
+- Who is the top customer in each country?
+- What is the revenue trend over time (by year and month)?
+- What does customer purchasing behaviour look like (orders and spend per customer)?
 
 ---
 
@@ -97,316 +64,198 @@
 
 ### Scope
 
-<!--
-  WHAT GOOD LOOKS LIKE:
-  In Scope: "Transaction-level data for Regions A–E, Jan 2023–Jun 2024.
-             Analysis covers revenue, return rates, and product category performance."
-  Out of Scope: "Customer demographics and marketing spend data were excluded -
-                 demographic data was incomplete for two regions, and marketing
-                 data sits in a separate system outside this engagement."
+3. Objectives
+Primary Objective: Write and execute SQL queries in MySQL Workbench to analyze the sales_data dataset and extract actionable business insights.
+Secondary Objective 1: Identify top orders, top-performing product lines, and country-level revenue and order value.
+Secondary Objective 2: Rank customers by revenue overall and within each country using window functions.
+Secondary Objective 3: Analyze revenue trends over time using cleaned date data.
+Secondary Objective 4: Demonstrate practical SQL skills including aggregate functions, window functions, date functions, filtering, grouping, and sorting.
 
-  WHAT TO AVOID:
-  ❌ Leaving Out of Scope blank. This is the section that protects your credibility.
-     If you don't define the fence, reviewers assume you missed things.
--->
+---
+
+## 4. Repository Structure
 
 | Dimension | Details |
 |-----------|---------|
-| **In Scope** | [What is included - data sources, time periods, segments] |
-| **Out of Scope** | [What you explicitly excluded - and a brief reason why] |
-| **Time Period** | [Date range of the data or the project itself] |
-| **Granularity** | [Unit of analysis - row-level, daily aggregates, per-user, etc.] |
+| **In Scope** | Order-level transaction records including order date, customer name, product line, country, and sales value|
+| **Out of Scope** |Customer demographic data, shipping/logistics data, and product cost data - these were not available in the dataset |
+| **Time Period** | Order records spanning the full date range present in sales_data |
+| **Granularity** | Row-level order data (one row per order) |
 
 ### Tools & Technologies
 
-<!--
-  List only what you actually used on this project.
-  This is not your skills section - it's the project's technical context.
--->
 
 | Category | Tool(s) Used |
 |----------|-------------|
-| Data Storage | [e.g., PostgreSQL, CSV files, BigQuery, S3] |
-| Data Processing | [e.g., Python, R, SQL, Excel, dbt] |
-| Analysis | [e.g., pandas, dplyr, custom SQL queries] |
-| Visualization | [e.g., Matplotlib, Tableau, Power BI, Looker] |
-| Version Control | [e.g., Git / GitHub] |
-| Documentation | [e.g., Markdown, Notion] |
-| Other | [Any additional tools] |
+| Database Management | MySQL |
+| Query Writing & Execution| MySQL Workbench |
+| Data Querying | SQL (SELECT, WHERE, GROUP BY, HAVING, ORDER BY) |
+| Aggregate Functions | COUNT, SUM, AVG, ROUND |
+| Date Functions | STR_TO_DATE, YEAR, MONTH|
+| Data Manipulation | UPDATE (with safe update mode)|
+| Documentation | Microsoft Word, GitHub |
 
 ---
 
 ## 4. Repository Structure
 
 ```
-[project-root]/
+Sales-Data-SQL-Analysis/
 │
 ├── data/
-│   ├── raw/                  # Original, unmodified source data - never edited
-│   ├── processed/            # Cleaned and transformed data
-│   └── external/             # Reference data, lookup tables, third-party files
+│   └── raw/                 # Original, unmodified sales dataset
 │
-├── notebooks/                # Jupyter, R Markdown, or Colab notebooks
+├── docs/                     # Data dictionary and project notes
 │
-├── scripts/                  # Reusable .py, .R, or .sh processing files
+├── queries/
+│   ├── exploratory/          # Initial investigative queries
+│   └── final/                # Final production-ready queries
 │
-├── queries/                  # SQL files (retain this folder for SQL-heavy projects)
-│   ├── exploratory/          # Ad-hoc or investigative queries
-│   ├── transformations/      # Cleaning and reshaping logic
-│   └── final/                # Production-ready or presentation queries
+├── reports/                  # Written summary report
 │
-├── reports/                  # Final outputs: PDFs, slide decks, Word docs
+├── visuals/                  # Screenshots of query results
 │
-├── visuals/                  # Exported charts, dashboard screenshots, ERD diagrams
-│
-├── docs/                     # Data dictionaries, schema notes, reference material
-│
-├── project_metadata.yml      # Machine-readable metadata (optional)
-└── README.md                 # You are here
+├── README.md                 # You are here
+└── project_metadata.yml      # Project metadata
 ```
-
-> ⚠️ *Delete folders you didn't use. An empty folder is worse than no folder.*
-> SQL-heavy projects: keep `queries/`. Analysis-only projects: keep `notebooks/`. Both? Keep both.
 
 ---
 
-## 5. Data Workflow
+## 6. Data Workflow
 
-<!--
-  Show how data moved through your project - from source to output.
-  Every transformation decision should be traceable here.
+1. **Source:** One sales table (sales_data) containing order-level transaction records including order number, customer name, product line, sales value, and order date.
+2. **Ingestion:**  Dataset loaded into MySQL Workbench as a structured database table (sales_data) within a dedicated sales database.
+3. **Cleaning:**  Identified that the ORDERDATE field was stored as text in an inconsistent format; converted it into a proper date column (OrderDateFixed) using STR_TO_DATE, then validated that every row parsed correctly.
+4. **Analysis:** Wrote and executed 8 SQL queries covering aggregate analysis, ranking, filtering, grouping, sorting, and date-based trend analysis to answer key business questions.
+5.  **Output:**  Query results documented in README, SQL script saved as a .sql file, selected screenshots of query outputs saved in the visuals/ folder, and a written summary report saved in the reports/ folder.
+   
+---
 
-  WHAT GOOD LOOKS LIKE:
-  1. Source: "Monthly CSV exports pulled from the internal POS system.
-              Five files, one per region, covering Jan 2023–Jun 2024."
-  2. Ingestion: "Loaded into Python using pandas. Files concatenated into
-                 a single dataframe (approx. 340,000 rows)."
-  3. Cleaning: "Removed 1.2% of rows with null transaction IDs.
-                Standardised date formats across regional files.
-                Resolved product category naming inconsistencies (3 variants → 1)."
-  4. Transformation: "Created a returns_rate field at product-category level.
-                      Aggregated to weekly and regional grain for trend analysis."
-  5. Analysis: "Descriptive statistics, regional comparison, return rate
-                segmentation by product category."
-  6. Output: "Summary report (PDF), annotated notebook, processed CSV."
 
-  WHAT TO AVOID:
-  ❌ "Data was cleaned and analysed." (No chain. No decisions. No trust.)
--->
-
-```
-[Data Source(s)]
-      ↓
-[Ingestion / Collection Method]
-      ↓
-[Cleaning & Transformation]
-      ↓
-[Analysis / Modelling / Querying]
-      ↓
-[Output / Visualisation / Reporting]
-```
-
-1. **Source:** [Where did the data come from? Format, size, access method.]
-2. **Ingestion:** [How was it brought in?]
-3. **Cleaning:** [What issues did you find and fix?]
-4. **Transformation:** [What new fields, aggregations, or structures did you create?]
-5. **Analysis:** [What methods - statistical, visual, query-based, model-based?]
-6. **Output:** [What form do the results take?]
 
 ---
 
-## 6. Data Model & Schema
+## 7. Data Model & Schema
 
-<!--
-  Define your fields so that someone reading your analysis can follow along
-  without digging through your code.
-
-  WHAT GOOD LOOKS LIKE (one row example):
-  | transaction_id | string | Unique identifier per sales transaction | TXN-00482 |
-  | return_flag    | boolean | Whether the transaction included a return | TRUE |
-  | region_code    | string | Two-letter identifier for store region | "NE" |
-
-  WHAT TO AVOID:
-  ❌ Skipping this section because "the field names are self-explanatory."
-     They're not. Not to a reviewer. Not to you in six months.
-
-  📌 FOR SQL PROJECTS: If you have multiple tables, create one block per table.
-     Describe join keys and relationships here. Your ERD (Section 7) will
-     visualise what this section describes in text.
-
-  📌 FOR NON-SQL PROJECTS: Describe the shape of your dataset informally
-     if a formal schema doesn't apply. Even one paragraph is more helpful than nothing.
--->
+The dataset contains order-level records from sales_data (Adventure Works Lite Sales).
 
 ### Dataset / Table: `[name]`
 
 | Field Name | Data Type | Description | Example Value |
 |------------|-----------|-------------|---------------|
-| `[field_1]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[field_2]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[field_3]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
+| `ORDERNUMBER` |Integer | Unique identifier for each order |10107 |
+| `CUSTOMERNAME` | Text | Name of the customer who placed the order | Land of Toys Inc. |
+| `PRODUCTLINE` | Text | Product line/category of the order | Motorcycle 
+| `COUNTRY` | Text | Country the order was shipped to | USA |
+| `SALES` | Float | Sale amount for the order | 2871.00 |
+| `ORDERDATE` |Text |Original order date (inconsistent format, as stored)| 2/24/2003 0:00 |
+| `OrderDateFixed` | Date| Cleaned order date (converted via STR_TO_DATE) | 2003-02-24 |
 
-> **Row count (approx.):** [X rows]
-> **Date range:** [Start] – [End]
-> **Key join / relationship:** [e.g., `orders.customer_id` → `customers.id`]
-
-*Add additional table blocks as needed for multi-table projects.*
-
----
-
-## 7. ERD - Entity Relationship Diagram
-### *(Primarily for SQL Projects - remove this section if not applicable)*
-
-<!--
-  An ERD shows how your tables connect to each other visually.
-  It is the fastest way for a reviewer to understand the data structure
-  of a SQL project without reading every query.
-
-  HOW TO INCLUDE YOUR ERD:
-  Option A - Image embed (most common):
-    Export your ERD from dbdiagram.io, DBeaver, Lucidchart, or similar.
-    Save to /visuals/erd.png and reference it below.
-
-  Option B - dbdiagram.io code block (version-controllable):
-    Paste your schema definition code directly in the fenced block below.
-    Anyone can paste it into dbdiagram.io to regenerate the visual.
-
-  Option C - Mermaid diagram (renders natively in GitHub):
-    Use the mermaid code block syntax below.
-    GitHub will render this as a diagram automatically.
-
-  PICK ONE. Don't use all three. Delete the options you don't use.
--->
-
-### Option A - Embedded Image
-![ERD Diagram](visuals/erd.png)
-*[Brief caption: e.g., "Three-table schema - orders, customers, and products joined on shared IDs."]*
+Key table: sales_data
+Date format: Original text stored inconsistently — converted using STR_TO_DATE in queries
 
 ---
 
-### Option B - dbdiagram.io Schema Definition
-```
-Table orders {
-  order_id    int     [pk]
-  customer_id int     [ref: > customers.customer_id]
-  product_id  int     [ref: > products.product_id]
-  order_date  date
-  amount      float
-}
+## 8.SQL ANALYSIS & Queries
+Q1: What are the 10 highest-value single orders, and what product line were they from?SELECT
+    ORDERNUMBER,
+    CUSTOMERNAME,
+    PRODUCTLINE,
+    SALES,
+    OrderDateFixed
+FROM sales_data
+WHERE Sales > 5000
+ORDER BY SALES DESC
+LIMIT 10;
+-- Result: [insert top 10 orders and product lines once available]
 
-Table customers {
-  customer_id int  [pk]
-  region_code string
-  signup_date date
-}
+Q2: Which product lines generate the most total revenue?
+SELECT
+    PRODUCTLINE,
+    COUNT(*) AS TotalOrders,
+    SUM(SALES) AS TotalRevenue
+FROM sales_data
+GROUP BY PRODUCTLINE
+HAVING SUM(SALES) > 10000
+ORDER BY TotalRevenue DESC;
+-- Result: [insert top revenue-generating product line once available]
+ SELECT
+    COUNTRY,
+    COUNT(*) AS TotalOrders,
+    ROUND(AVG(SALES),2) AS AvgOrderValue,
+    
+Q3: What is the average order value and total revenue by country?
+ROUND(SUM(SALES), 2) AS TotalRevenue
+FROM sales_data
+GROUP BY COUNTRY
+ORDER BY TotalRevenue DESC;
+-- Result: [insert top country by revenue and avg order value once available]
 
-Table products {
-  product_id   int    [pk]
-  category     string
-  unit_price   float
-}
-```
-*Paste this into [dbdiagram.io](https://dbdiagram.io) to view the visual.*
+Q4: Which customers are the highest revenue generators?SELECT
+    CUSTOMERNAME,
+    SUM(SALES) AS TotalRevenue,
+    RANK() OVER (ORDER BY SUM(SALES) DESC) AS CustomerRank
+FROM sales_data
+GROUP BY CUSTOMERNAME;
+-- Result: [insert top revenue-generating customer once available]
 
----
+Q5: How do all orders rank from highest to lowest sales value?SELECT
+    ORDERNUMBER,
+    CUSTOMERNAME,
+    PRODUCTLINE,
+    SALES,
+    ROW_NUMBER() OVER (ORDER BY SALES DESC) AS SalesRank
+FROM sales_data;
+-- Result: Every order individually ranked by sales value, highest to lowest
 
-### Option C - Mermaid Diagram *(renders on GitHub)*
-```mermaid
-erDiagram
-    ORDERS {
-        int order_id PK
-        int customer_id FK
-        int product_id FK
-        date order_date
-        float amount
-    }
-    CUSTOMERS {
-        int customer_id PK
-        string region_code
-        date signup_date
-    }
-    PRODUCTS {
-        int product_id PK
-        string category
-        float unit_price
-    }
-    ORDERS ||--o{ CUSTOMERS : "placed by"
-    ORDERS ||--o{ PRODUCTS : "contains"
-```
 
----
+Q6: Who is the top customer in each country?SELECT
+    COUNTRY,
+    CUSTOMERNAME,
+    SUM(SALES) AS TotalRevenue,
+    RANK() OVER(
+        PARTITION BY COUNTRY
+        ORDER BY SUM(SALES) DESC
+    ) AS CountryRank
+FROM sales_data
+GROUP BY COUNTRY, CUSTOMERNAME;
+-- Result: [insert top customer per country once available]
 
-**Table Relationships Summary:**
 
-| Relationship | Join Key | Type |
-|-------------|----------|------|
-| `orders` → `customers` | `customer_id` | Many-to-One |
-| `orders` → `products` | `product_id` | Many-to-One |
-| [Add rows as needed] | | |
+ Q7: What is the revenue trend over time (by year and month)?SELECT
+    YEAR(OrderDateFixed) AS Year,
+    MONTH(OrderDateFixed) AS Month,
+    ROUND(SUM(SALES),2) AS Revenue
+FROM sales_data
+GROUP BY YEAR(OrderDateFixed), MONTH(OrderDateFixed)
+ORDER BY Year, Month;
 
----
+-- Result: [insert monthly/yearly revenue trend once available]
+Q8: What does customer purchasing behaviour look like (orders and spend per customer)?SELECT
+    CUSTOMERNAME,
+    COUNT(*) AS TotalOrders,
+    ROUND(SUM(SALES),2) AS TotalSpent
+FROM sales_data
+GROUP BY CUSTOMERNAME
+ORDER BY TotalSpent DESC
+LIMIT 10;
+-- Result: [insert top 10 customers by spend and order count once available]
 
-## 8. Analysis & Metrics
-
-<!--
-  Explain what you measured and how - before you share what you found.
-
-  WHAT GOOD LOOKS LIKE:
-  Metric: "Customer Return Rate"
-  Definition: "Number of transactions flagged as returns divided by total
-               transactions, calculated at product-category and regional grain."
-  Why It Matters: "Return rate - not sales volume - was hypothesised to
-                  explain regional revenue gaps. This metric tests that hypothesis."
-
-  WHAT TO AVOID:
-  ❌ Defining a metric only in code: SUM(returns) / COUNT(transaction_id)
-     That's an implementation. Write the plain-language definition here.
-     Both belong in your project - the definition in the README,
-     the implementation in the code.
--->
-
-### Analytical Approach
-
-[Describe how you approached the analysis. Were you exploring patterns? Testing a hypothesis? Building and validating a pipeline? Be honest about your method - exploratory work is valid, just call it that.]
-
-### Key Metrics Defined
-
-| Metric | Plain-Language Definition | Why It Matters |
-|--------|--------------------------|----------------|
-| `[Metric 1]` | [What it measures, in one sentence] | [What decision or question it answers] |
-| `[Metric 2]` | [What it measures, in one sentence] | [What decision or question it answers] |
-| `[Metric 3]` | [What it measures, in one sentence] | [What decision or question it answers] |
-
-### Methods Used
-
-- [e.g., Descriptive statistics - distribution, central tendency, outlier detection]
-- [e.g., Trend analysis across [time period]]
-- [e.g., Segmentation / group comparison by [dimension]]
-- [e.g., Correlation analysis between [variable A] and [variable B]]
-- [e.g., SQL window functions for [specific aggregation]]
-- [e.g., Custom aggregation or transformation logic in [tool]]
 
 ---
+
+
 
 ## 9. Key Insights
 
-<!--
-  Findings + implications. Not just what happened - what it means.
-
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Return rates, not sales volume, explain Region A's underperformance.
-      Region A's return rate on home goods was 34% - more than double the
-      company average. Revenue was not lost at the point of sale; it was
-      lost post-sale through refunds. This points to a fulfilment or
-      product quality issue specific to that region, not a demand problem."
-
-  WHAT TO AVOID:
-  ❌ "Region A had lower revenue than other regions in Q4."
-     (That's an observation. It describes what happened.
-      An insight says what it means and where to look next.)
-
-  Aim for 3–6 insights. Quality over quantity.
--->
+9. Key Insights
+(To be completed once query result screenshots are available — each insight should follow the Gilead format: bolded headline finding — what it suggests for the business.)
+[Top order/product line finding] — [what it suggests]
+[Top revenue product line finding] — [what it suggests]
+[Top country by revenue finding] — [what it suggests]
+[Top customer finding] — [what it suggests]
+[Revenue trend finding] — [what it suggests]
+[Customer purchasing behaviour finding] — [what it suggests]
 
 **Insight 1: [Short descriptive headline]**
 [What you found + what it suggests. One short paragraph.]
@@ -424,24 +273,27 @@ erDiagram
 
 ## 10. Recommendations
 
-<!--
-  Action-oriented. Addressed to a real audience.
-  Tied explicitly to the insight that supports each one.
-
-  WHAT GOOD LOOKS LIKE:
-  Priority: High
-  Recommendation: "Conduct a fulfilment audit for home goods deliveries
-                   in Region A - specifically investigating whether returns
-                   correlate with a particular warehouse, carrier, or SKU batch."
-  Based On: Insight 1 - return rate anomaly in Region A
-  Owner: Operations / Supply Chain team
-
-  WHAT TO AVOID:
-  ❌ "Improve the return rate."
-     (Not actionable. Doesn't say who, how, or where to start.)
-  ❌ "Further analysis is needed."
-     (This is a placeholder, not a recommendation.)
--->
+10. Recommendations
+Priority
+Recommendation
+Based On
+Suggested Owner
+High
+[Recommendation tied to top product line insight]
+Insight [#]
+Sales / Product team
+High
+[Recommendation tied to top customer insight]
+Insight [#]
+Customer Success team
+Medium
+[Recommendation tied to country-level insight]
+Insight [#]
+Regional Sales team
+Low
+[Recommendation tied to revenue trend insight]
+Insight [#]
+Analytics team
 
 | Priority | Recommendation | Based On | Suggested Owner |
 |----------|---------------|----------|-----------------|
