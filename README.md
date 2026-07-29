@@ -278,59 +278,22 @@ LIMIT 10;
 ## 9. Key Insights
 
 9. Key Insights
-(To be completed once query result screenshots are available — each insight should follow the Gilead format: bolded headline finding — what it suggests for the business.)
-[Top order/product line finding] — [what it suggests]
-[Top revenue product line finding] — [what it suggests]
-[Top country by revenue finding] — [what it suggests]
-[Top customer finding] — [what it suggests]
-[Revenue trend finding] — [what it suggests]
-[Customer purchasing behaviour finding] — [what it suggests]
-
-**Insight 1: [Short descriptive headline]**
-[What you found + what it suggests. One short paragraph.]
-
-**Insight 2: [Short descriptive headline]**
-[What you found + what it suggests.]
-
-**Insight 3: [Short descriptive headline]**
-[What you found + what it suggests.]
-
-**Insight 4 (if applicable): [Short descriptive headline]**
-[What you found + what it suggests.]
-
+**Euro Shopping Channel is the single top revenue-generating customer at 912,294.11 across 259 orders** nearly 40% more revenue than the second-place customer, making it the most critical account to retain.
+**The USA dominates by country, generating 3,627,982.83 in revenue across 1,004 orders** nearly triple the revenue of the next-largest market, Spain (1,215,686.92).
+**The highest single order was 14,082.80 for Vintage Cars (The Sharp Gifts Warehouse)** high-value single orders are concentrated in Vintage Cars and Classic Cars product lines.
+**Order volume and revenue don't move in lockstep **Euro Shopping Channel's 259 orders average roughly 3,524 per order, while Mini Gifts Distributors Ltd. averages roughly 3,638 per order across fewer transactions (180), showing revenue concentration isn't purely a volume game.
+**Revenue climbed steadily from January to April 2003, rising from 129,753.60 to a peak of 201,609.55, before easing slightly through May and June**suggesting a Q2 seasonal peak worth investigating further.
+**Country-level average order values are tightly clustered (3,300–3,614) across USA, Spain, France, Australia, UK, and Italy** indicating consistent per-order pricing globally rather than one market driving unusually large deals.
 ---
 
 ## 10. Recommendations
 
-10. Recommendations
-Priority
-Recommendation
-Based On
-Suggested Owner
-High
-[Recommendation tied to top product line insight]
-Insight [#]
-Sales / Product team
-High
-[Recommendation tied to top customer insight]
-Insight [#]
-Customer Success team
-Medium
-[Recommendation tied to country-level insight]
-Insight [#]
-Regional Sales team
-Low
-[Recommendation tied to revenue trend insight]
-Insight [#]
-Analytics team
-
 | Priority | Recommendation | Based On | Suggested Owner |
 |----------|---------------|----------|-----------------|
-| High | [Specific, actionable step] | [Insight it comes from] | [Who should act] |
-| Medium | [Specific, actionable step] | [Insight it comes from] | [Who should act] |
-| Low | [Exploratory or longer-term suggestion] | [Insight it comes from] | [Who should act] |
+| High | Develop a dedicated account management plan for Euro Shopping Channel and Mini Gifts Distributors Ltd. given their outsized share of revenue | Insight 1 & 4 — top 2 customers together generate over 1.5M in revenue | Sales / Key Accounts team act] |
+| Medium |Investigate what drove the April 2003 revenue peak (201,609.55) to identify repeatable seasonal or promotional drivers| Insight 5 — revenue peaked in April before easing | Regional Sales team | Sales / Marketing team |
+|Medium | Examine why Vintage Cars and Classic Cars generate the highest single-order values and consider promoting them more broadly | Insight 3 — top orders concentrated in Vintage/Classic Cars| Product / Marketing team |
 
----
 
 ## 13. Deliverables
 
@@ -339,6 +302,7 @@ Analytics team
 | SQL Query File | All 8 queries written and executed in MySQL Workbench | queries/final/sales_data_queries.sql |
 | Summary Report |Written Word document summarizing findings and insights | reports/Sales_Data_SQL_Analysis_Report.docx |
 | Raw Dataset | Original sales_data dataset file | [`visuals/`] |
+| Query Screenshots | Selected screenshots of query results from MySOL Workbench | Visual |
 
 
 ---
@@ -346,10 +310,10 @@ Analytics team
 ## 14. Author
 
 **Vivian Okwara**
-[Your role or title - current or target]
+Data Analyst | Lagos, Nigeria 
 
 - 🔗 LinkedIn: https://linkedin.com/in/okwara-vivian
-- 💼 [Portfolio or GitHub profile URL]
+- 💼 https://Vivian-Portfolio. github.io
 - 📧 Email: okwaravivian26@gmail.com
 
 ---
