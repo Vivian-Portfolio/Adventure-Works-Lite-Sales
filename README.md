@@ -21,16 +21,16 @@
 1. [Project Overview](#1-project-overview)
 2. [Key Questions Answered](#2-Key Questions Answered)
 3. [Objectives](#2-objectives)
-4. [Project Scope & Tools](#3-project-scope--tools)
-5. [Repository Structure](#4-repository-structure)
-6. [Data Workflow](#5-data-workflow)
-7. [Data Model & Schema](#6-data-model--schema)
+4. [Project Scope & Tools](#4-project-scope--tools)
+5. [Repository Structure](#5-repository-structure)
+6. [Data Workflow](#6-data-workflow)
+7. [Data Model & Schema](#7-data-model--schema)
 8. [SQL Analysis & Queries](#8-SQL Analysis & Queries)
 9. [Key Insights](#9-key-insights)
 10. [Recommendations](#10-recommendations)
-11. [Deliverables](#13-deliverables)
-12. [Author](#14-author)
-
+11. [Deliverables](#11-deliverables)
+12. [Author](#12-author)
+    
 ---
 
 ## 1. Project Overview
