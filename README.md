@@ -309,7 +309,7 @@ LIMIT 10;
 |-------------|-------------|----------|
 | SQL Query File | All 8 queries written and executed in MySQL Workbench | queries/final/sales_data_queries.sql |
 | Summary Report |Written Word document summarizing findings and insights | reports/Sales_Data_SQL_Analysis_Report.docx |
-| Raw Dataset | Original sales_data dataset file | [`data/raw`] |
+| Raw Dataset | Original sales_data dataset file | [`data/raw /sales_data_sample.csv`] |
 | Query Screenshots | Selected screenshots of query results from MySOL Workbench | Visual |
 
 
