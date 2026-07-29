@@ -58,10 +58,15 @@
 ---
 
 ## 3. Objectives
+
 Primary Objective: Write and execute SQL queries in MySQL Workbench to analyze the sales_data dataset and extract actionable business insights.
+
 Secondary Objective 1: Identify top orders, top-performing product lines, and country-level revenue and order value.
+
 Secondary Objective 2: Rank customers by revenue overall and within each country using window functions.
-Secondary Objective 3: Analyze revenue trends over time using cleaned date data.
+
+Secondary Objective 3: Analyze revenue trends over time using cleaned date data
+
 Secondary Objective 4: Demonstrate practical SQL skills including aggregate functions, window functions, date functions, filtering, grouping, and sorting.
 
 ---
