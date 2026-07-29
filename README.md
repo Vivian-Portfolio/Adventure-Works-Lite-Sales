@@ -155,7 +155,7 @@ Date format: Original text stored inconsistently - converted using STR_TO_DATE i
 
 ## 8.SQL ANALYSIS & Queries
 
-**Q1: What are the 10 highest-value single orders, and what product line were they from?*
+**Q1: What are the 10 highest-value single orders, and what product line were they from?
 ```sql
 SELECT
     ORDERNUMBER,
@@ -231,7 +231,7 @@ FROM sales_data;
 ```
 ---
 
-**Q6: Who is the top customer in each country?*
+**Q6: Who is the top customer in each country?
 ```sql
 SELECT
     COUNTRY,
