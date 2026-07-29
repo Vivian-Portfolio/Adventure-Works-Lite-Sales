@@ -281,10 +281,15 @@ LIMIT 10;
 ## 9. Key Insights
 
 **Euro Shopping Channel is the single top revenue-generating customer at 912,294.11 across 259 orders** nearly 40% more revenue than the second-place customer, making it the most critical account to retain.
+
 **The USA dominates by country, generating 3,627,982.83 in revenue across 1,004 orders** nearly triple the revenue of the next-largest market, Spain (1,215,686.92).
+
 **The highest single order was 14,082.80 for Vintage Cars (The Sharp Gifts Warehouse)** high-value single orders are concentrated in Vintage Cars and Classic Cars product lines.
-**Order volume and revenue don't move in lockstep **Euro Shopping Channel's 259 orders average roughly 3,524 per order, while Mini Gifts Distributors Ltd. averages roughly 3,638 per order across fewer transactions (180), showing revenue concentration isn't purely a volume game.
-**Revenue climbed steadily from January to April 2003, rising from 129,753.60 to a peak of 201,609.55, before easing slightly through May and June**suggesting a Q2 seasonal peak worth investigating further.
+
+**Order volume and revenue don't move in lockstep** Euro Shopping Channel's 259 orders average roughly 3,524 per order, while Mini Gifts Distributors Ltd. averages roughly 3,638 per order across fewer transactions (180), showing revenue concentration isn't purely a volume game.
+
+**Revenue climbed steadily from January to April 2003, rising from 129,753.60 to a peak of 201,609.55, before easing slightly through May and June** suggesting a Q2 seasonal peak worth investigating further.
+
 **Country-level average order values are tightly clustered (3,300–3,614) across USA, Spain, France, Australia, UK, and Italy** indicating consistent per-order pricing globally rather than one market driving unusually large deals.
 
 ---
