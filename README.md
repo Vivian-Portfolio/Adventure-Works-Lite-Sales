@@ -44,7 +44,7 @@
 
 ---
 
-## 2. Key Questions Answered**
+## 2. Key Questions Answered
 
 - What are the 10 highest-value single orders, and what product line were they from?
 - Which product lines generate the most total revenue?
