@@ -155,7 +155,7 @@ Date format: Original text stored inconsistently - converted using STR_TO_DATE i
 
 ## 8.SQL ANALYSIS & Queries
 
-**Q1: What are the 10 highest-value single orders, and what product line were they from?
+**Q1: What are the 10 highest-value single orders, and what product line were they from?**
 ```sql
 SELECT
     ORDERNUMBER,
@@ -174,7 +174,7 @@ LIMIT 10;
 -- #10403 (UK Collectables Ltd., Motorcycles, 11,886.60), and #10405 (Mini Caravy, Classic Cars, 11,739.70)
 ```
 
-**Q2: Which product lines generate the most total revenue?*
+**Q2: Which product lines generate the most total revenue?**
 ```sql
 SELECT
     PRODUCTLINE,
@@ -187,7 +187,7 @@ ORDER BY TotalRevenue DESC;
 -- Result: [insert top revenue-generating product line once available]
 ---
 
-**Q3: What is the average order value and total revenue by country?
+**Q3: What is the average order value and total revenue by country?**
  ```sql
  SELECT
     COUNTRY,
@@ -203,7 +203,7 @@ ORDER BY TotalRevenue DESC;
 ```
 ---
 
-**Q4: Which customers are the highest revenue generators?
+**Q4: Which customers are the highest revenue generators?**
  ```sql
 SELECT
     CUSTOMERNAME,
@@ -217,7 +217,7 @@ GROUP BY CUSTOMERNAME;
 ```
 ---
 
-**Q5: How do all orders rank from highest to lowest sales value?
+**Q5: How do all orders rank from highest to lowest sales value?**
  ```sql
 SELECT
     ORDERNUMBER,
@@ -231,7 +231,7 @@ FROM sales_data;
 ```
 ---
 
-**Q6: Who is the top customer in each country?
+**Q6: Who is the top customer in each country?**
 ```sql
 SELECT
     COUNTRY,
@@ -248,7 +248,7 @@ GROUP BY COUNTRY, CUSTOMERNAME;
 ```
 ---
 
- **Q7: What is the revenue trend over time (by year and month)?
+ **Q7: What is the revenue trend over time (by year and month)?**
  ```sql
 SELECT
     YEAR(OrderDateFixed) AS Year,
@@ -262,7 +262,7 @@ ORDER BY Year, Month;
 ```
 ---
 
-Q8: What does customer purchasing behaviour look like (orders and spend per customer)?
+Q8: What does customer purchasing behaviour look like (orders and spend per customer)?**
 ```sql
 SELECT
     CUSTOMERNAME,
