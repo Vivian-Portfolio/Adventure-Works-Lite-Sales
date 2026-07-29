@@ -298,9 +298,9 @@ LIMIT 10;
 
 | Priority | Recommendation | Based On | Suggested Owner |
 |----------|---------------|----------|-----------------|
-| High | Develop a dedicated account management plan for Euro Shopping Channel and Mini Gifts Distributors Ltd. given their outsized share of revenue | Insight 1 & 4 — top 2 customers together generate over 1.5M in revenue | Sales / Key Accounts team act] |
-| Medium |Investigate what drove the April 2003 revenue peak (201,609.55) to identify repeatable seasonal or promotional drivers| Insight 5 — revenue peaked in April before easing | Regional Sales team | Sales / Marketing team |
-|Medium | Examine why Vintage Cars and Classic Cars generate the highest single-order values and consider promoting them more broadly | Insight 3 — top orders concentrated in Vintage/Classic Cars| Product / Marketing team |
+| High | Develop a dedicated account management plan for Euro Shopping Channel and Mini Gifts Distributors Ltd. given their outsized share of revenue | Insight 1 & 4 - top 2 customers together generate over 1.5M in revenue | Sales / Key Accounts team act] |
+| Medium |Investigate what drove the April 2003 revenue peak (201,609.55) to identify repeatable seasonal or promotional drivers| Insight 5 - revenue peaked in April before easing | Regional Sales team | Sales / Marketing team |
+|Medium | Examine why Vintage Cars and Classic Cars generate the highest single-order values and consider promoting them more broadly | Insight 3 - top orders concentrated in Vintage/Classic Cars| Product / Marketing team |
 
 
 ## 13. Deliverables
