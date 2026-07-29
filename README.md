@@ -318,6 +318,7 @@ LIMIT 10;
 ## 14. Author
 
 **Vivian Okwara**
+
 Data Analyst | Lagos, Nigeria 
 
 - 🔗 LinkedIn: https://linkedin.com/in/okwara-vivian
