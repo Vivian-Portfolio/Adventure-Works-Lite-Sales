@@ -70,7 +70,7 @@ Secondary Objective 4: Demonstrate practical SQL skills including aggregate func
 
 ## 4. Porject Scope & Tools 
 
-###Scope 
+###    Scope 
 
 | Dimension | Details |
 |-----------|---------|
